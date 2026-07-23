@@ -9,6 +9,10 @@ on:
 jobs:
   build-java:
     runs-on: ubuntu-latest
+    strategy:
+     matrix:
+      os: [ubuntu-latest, windows-laest, mac-latest]
+    
 
     steps:
       - name: Checkout code
@@ -25,3 +29,5 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build
+        
+        
